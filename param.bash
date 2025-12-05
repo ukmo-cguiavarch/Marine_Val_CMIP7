@@ -5,7 +5,7 @@ ulimit -s unlimited
 ##### USER CHOICES START ######
 
 # top level directory
-export MARINE_VAL=/home/users/catherine.guiavarch/VALIDATION/Marine_Val/CMIP7
+export MARINE_VAL=/home/users/catherine.guiavarch/VALIDATION/Marine_Val_CMIP7
 
 # Path of the folder where mesh_mask bathy and are locally stored 
 # (names of mesh mask and bathy are arguments to this script)
