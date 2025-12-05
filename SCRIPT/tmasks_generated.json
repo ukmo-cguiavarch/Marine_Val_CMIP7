@@ -1,0 +1,64 @@
+{
+  "runAABW": [
+    "tmask_WEDATL_mindepth-1500.nc",
+    "tmask_SOUTHERN_OCEAN_mindepth-1500.nc"
+  ],
+  "runDEEPTS": [
+    "tmask_AMU_mindepth-390.nc",
+    "tmask_WROSS_mindepth-390.nc",
+    "tmask_EROSS_mindepth-390.nc",
+    "tmask_WWED_mindepth-390.nc"
+  ],
+  "runHTC": [
+    "tmask_NA_GYRE_minisobath-1000.nc",
+    "tmask_NA_GYRE_obs-woa13v2_minisobath-1000.nc"
+  ],
+  "runMedOVF": [
+    "tmask_MEDOVF_mindepth-500_maxdepth-2500.nc",
+    "tmask_MEDOVF_obs-woa13v2_mindepth-500_maxdepth-2500.nc"
+  ],
+  "runMLD_LabSea": [
+    "tmask_LAB_SEA_minisobath-1000.nc"
+  ],
+  "runMLD_Weddell": [
+    "tmask_WG_minisobath-1000.nc"
+  ],
+  "runBSF_NA": [
+    "tmask_NA_GYRE_minisobath-1000.nc"
+  ],
+  "runBSF_SO": [
+    "tmask_WG_minisobath-1000.nc",
+    "tmask_RG_minisobath-1000.nc"
+  ],
+  "runSSS_LabSea": [
+    "tmask_LAB_SEA_maxdepth-1.5.nc"
+  ],
+  "runSST_NWCorner": [
+    "tmask_NEWFOUND_maxdepth-1.5.nc"
+  ],
+  "runSST_SO": [
+    "tmask_SO_maxdepth-1.5.nc"
+  ],
+  "runSST_GLO": [
+    "tmask_GLO_maxdepth-1.5.nc"
+  ],
+  "runSSS_GLO": [
+    "tmask_GLO_maxdepth-1.5.nc"
+  ],
+  "runQHF": [
+    "tmask_GLO.nc"
+  ],
+  "runSpAvg": [
+    "tmask_GLO.nc"
+  ],
+  "runSpAvgLower": [
+    "tmask_GLO_mindepth-1000.nc"
+  ],
+  "runSpAvgUpper": [
+    "tmask_GLO_maxdepth-1000.nc"
+  ],
+  "runSTC": [
+    "tmask_NA_GYRE_minisobath-1000.nc",
+    "tmask_NA_GYRE_obs-woa13v2_minisobath-1000.nc"
+  ]
+}

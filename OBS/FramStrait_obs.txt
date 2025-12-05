@@ -1,0 +1,4 @@
+ref = Fahrbach et al, Polar Research (2001)
+mean = 9.5
+min = 8.1
+max = 10.9

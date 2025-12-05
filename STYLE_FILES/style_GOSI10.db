@@ -1,0 +1,28 @@
+ runid     |     name                |   line   |   color        |
+ u-cl51o   | GC5 new bathy - old VALSO  | -        | orange      |
+ u-cl518   | GC5 new bathy - new VALSO  | -        | gold      |
+ u-de063   | GOSI10p0 eORCA025 JRA old HPC  | -        | royalblue      |
+ u-do222   | GOSI10p0 eORCA025 JRA new HPC  | -        | aqua      |
+ u-dn353   | GOSI10p0 eORCA1 pi-control forcing    | -        | darkviolet            |
+ u-do523   | GOSI10p0 eORCA1 repeat yr forcing     | -        |  chartreuse           |
+ u-dl024   | GOSI10p2 eORCA12     | -        |  royalblue      |
+ u-dn568   | GOSI10p3 eORCA12     | -        |  black      |
+ u-dq020   | NEMO5 GOSI10p3 eORCA025 | -        |  black      |
+ u-dm257   | NEMO4.2.2 GOSI10p3 1/4 | -        |  royalblue      |
+ u-dq383   | NEMO5 GOSI10.beta.4 MLF 30min 1/4 | -        |  black      |
+ u-dq436   | NEMO5 GOSI10.beta.4 RK3 60min 1/4  | -        |  orange     |
+ u-dr344   | NEMO5 GOSI10.beta.4 RK3 60min 1/4  (no MEs) - smagorinsky | -        |  chartreuse   |
+ u-dr287   | NEMO5 GOSI10.beta.4 RK3 30min 1/4  | -        |  darkred   |
+ u-dr486   | NEMO5 GOSI10.beta.4 RK3 60min 1/4 (no MEs) | -        | green      |
+ u-dr620   | NEMO5 GOSI10.beta.4 RK3 30min 1/4 nn_fsbc=2 | -        |  darkviolet  |
+ u-dr753   | GOSI10p3 1/4 - sea ice fraction - no SSS under sea ice 
+ u-ds700   | NEMO5 eORCA1 RK3 30min nn_etau=0 | --        |  darkorchid   |
+ u-ds699   | NEMO5 eORCA1 RK3 60min nn_etau=0 | -        |  darkorchid     |
+ u-ds645   | NEMO5 eORCA1 MLF 30min nn_etau=0 | --        |  navy      | 
+ u-ds644   | NEMO5 eORCA1 MLF 60min nn_etau=0 | -        |  navy      | 
+ u-ds030   | NEMO5 eORCA025 MLF 30min nn_etau=1 | -        |  darkred    | 
+ u-ds068   | NEMO5 eORCA025 RK3 30min nn_etau=1 | --        |  darkgreen    | 
+ u-ds069   | NEMO5 eORCA025 RK3 60min nn_etau=1 | -        |  darkgreen    | 
+ u-ds639   | NEMO5 eORCA025 RK3 30min nn_etau=0 | --        |  indianred    |
+ u-ds643   | NEMO5 eORCA025 RK3 60min nn_etau=0 | -        |  indianred    |
+ 

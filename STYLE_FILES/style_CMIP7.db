@@ -1,0 +1,13 @@
+ runid     |     name            |   line   |   color       |
+ u-ds596   | GC5c (i3p211) N96 ORCA1 UM13.8 piControl with CMIP6 forcings| -    | black   |
+ u-ds709   | GC5c (r2i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP6 forcings. ICs Y3200 | -    | mediumseagreen      |
+ u-ds990   | GC5c (r3i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings: solar+volcanic. ICs Y3200 | -    | steelblue        |
+ u-dt112   | GC5c (r4i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings: all except ozone. ICs Y3200 | -    | darkorange   |
+ u-dt924   | GC5c (r5i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings: all except ozone. ICs Y3430 | -    | orangered   |
+ u-du452   | GC5c (r6i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings. ICs Y3607 | -    | darkred   |
+ u-du917   | GC5c (r7i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings. ICs Y3736 | -    | navy   |
+ u-du786   | u-du786 - UKESM1.3 shlat2d (EX)| -    | red |
+ u-du743   | u-du743 - UKESM1.3 shlat2d (EX)| -    | orangered   |
+ u-do474   | u-do474 - UKESM1.3 (XC40)| -    | black     |
+ u-dq448   | u-dq448 - UKESM1.3 (EX)| -    | blue      | 
+
