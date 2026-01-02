@@ -7,13 +7,24 @@
 #SBATCH --error=convert.err
 #SBATCH --time=240
 
-moo get moo:/crum/u-du743/ony.nc.file/nemo_du743o_1y_32??**grid*[U,V,T]*  .
-moo get moo:/crum/u-du743/ons.nc.file/nemo_du743o_1s_32??1201*grid*T*   .
-moo get moo:/crum/u-du743/onm.nc.file/nemo_du743o_1m_32??0301*grid*T*   .
-moo get moo:/crum/u-du743/onm.nc.file/nemo_du743o_1m_32??0901*grid*T* .
+suiteId=u-du914
+DATAPATH=/data/scratch/andrea.rochner/MARINE_VAL
+
+if [ ! -d ${DATAPATH}/${suiteId} ]; then
+  echo "Directory for ${suiteId} does not exist. Create it..."
+  mkdir ${DATAPATH}/${suiteId}
+  mkdir ${DATAPATH}/${suiteId}/data
+fi
+DATAPATH=${DATAPATH}/${suiteId}
+
+
+moo get --fill-gaps moo:/crum/${suiteId}/ony.nc.file/nemo_${suiteId#*-}o_1y_*grid*[U,V,T]*  ${DATAPATH}/data/.
+moo get --fill-gaps moo:/crum/${suiteId}/ons.nc.file/nemo_${suiteId#*-}o_1s_????1201*grid*T*  ${DATAPATH}/data/.
+moo get --fill-gaps moo:/crum/${suiteId}/onm.nc.file/nemo_${suiteId#*-}o_1m_????0301*grid*T*  ${DATAPATH}/data/.
+moo get --fill-gaps moo:/crum/${suiteId}/onm.nc.file/nemo_${suiteId#*-}o_1m_????0901*grid*T*  ${DATAPATH}/data/.
 
 module load scitools
-ROOT=/data/scratch/catherine.guiavarch/MARINE_VAL/u-du743/new/nemo_du743o_1*_*01*-*01*
+ROOT=${DATAPATH}/data/nemo_${suiteId#*-}o_1*
 for FILE in ${ROOT}*grid-T* ; do
    ncatted -a standard_name,"deptht",c,c,"depth" $FILE;
    ncrename -v so,so_pra $FILE;
