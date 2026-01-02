@@ -7,7 +7,7 @@
 #SBATCH --error=convert.err
 #SBATCH --time=240
 
-suiteId=u-du914
+suiteId=$1
 DATAPATH=/data/scratch/andrea.rochner/MARINE_VAL
 
 if [ ! -d ${DATAPATH}/${suiteId} ]; then
