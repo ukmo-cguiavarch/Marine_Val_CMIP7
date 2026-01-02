@@ -5,14 +5,14 @@ ulimit -s unlimited
 ##### USER CHOICES START ######
 
 # top level directory
-export MARINE_VAL=/home/users/catherine.guiavarch/VALIDATION/Marine_Val_CMIP7
+export MARINE_VAL=/data/users/andrea.rochner/CMIP7_MONITORING/Marine_Val_CMIP7
 
 # Path of the folder where mesh_mask bathy and are locally stored 
 # (names of mesh mask and bathy are arguments to this script)
 export MSKPATH=/data/users/catherine.guiavarch/MESH_MASK/
 
 # Path where cdftools executables are locally stored
-export CDFPATH=/YOUR/LOCAL/PATH/CDFTOOLS_DIR/bin
+#export CDFPATH=/YOUR/LOCAL/PATH/CDFTOOLS_DIR/bin
 
 # Local path of the nam_cdf_names namelist.
 # You can use as a template the "nam_cdf_names_template"
