@@ -1,0 +1,33 @@
+#!/bin/bash -l
+
+#SBATCH --qos=normal
+#SBATCH --mem=120000
+#SBATCH --ntasks=4
+#SBATCH --output=convert.out
+#SBATCH --error=convert.err
+#SBATCH --time=240
+
+moo get moo:/crum/u-du743/ony.nc.file/nemo_du743o_1y_32??**grid*[U,V,T]*  .
+moo get moo:/crum/u-du743/ons.nc.file/nemo_du743o_1s_32??1201*grid*T*   .
+moo get moo:/crum/u-du743/onm.nc.file/nemo_du743o_1m_32??0301*grid*T*   .
+moo get moo:/crum/u-du743/onm.nc.file/nemo_du743o_1m_32??0901*grid*T* .
+
+module load scitools
+ROOT=/data/scratch/catherine.guiavarch/MARINE_VAL/u-du743/new/nemo_du743o_1*_*01*-*01*
+for FILE in ${ROOT}*grid-T* ; do
+   ncatted -a standard_name,"deptht",c,c,"depth" $FILE;
+   ncrename -v so,so_pra $FILE;
+   ncrename -v thetao,thetao_pot $FILE;
+   ncrename -v thkcello,cell_thickness $FILE;
+   echo $FILE;
+done
+
+for FILE in ${ROOT}*grid-U* ; do
+   ncatted -a standard_name,"depthu",c,c,"depth" $FILE;
+   echo $FILE;
+done
+
+for FILE in ${ROOT}*grid-V* ; do
+   ncatted -a standard_name,"depthv",c,c,"depth" $FILE;
+   echo $FILE;
+done
