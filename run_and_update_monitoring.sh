@@ -1,17 +1,17 @@
 #!/bin/bash
 
 ## Get data or update data
-#runs="u-dv765"
+
+# DEFINE RUNS TO KEEP UP TO DATE IN MONITORING
 runs="u-dv764 u-dv759 u-dv672 u-dv766 u-dv765"
-# u-dv672 u-dv766 u-dv765 (and the orig's: u-du914, u-dv020, u-dv027,
-# u-dv028, u-dv346; UKESM1.1 u-by230
+# WHERE THE DATA WILL BE STORED
 DATAPATH=/data/scratch/andrea.rochner/MARINE_VAL
 
+
+# If no directory for the suiteID exists, create it
 for suiteId in $runs ; do
   echo ${DATAPATH}/${suiteId}
-
   RUNPATH=${DATAPATH}/${suiteId}
-
   if [ ! -d ${RUNPATH} ]; then
     echo "Directory for ${suiteId} does not exist. Creating it."
     mkdir ${RUNPATH}
@@ -21,6 +21,7 @@ for suiteId in $runs ; do
 
 
   ## Update data
+  # CHECK IF THE PROCESSING IN submit_convert_marineval.batch IS WHAT YOU WANT TO DO
   ./GET_DATA/submit_convert_marineval.batch "${suiteId}" ${RUNPATH}
 
   ## Run processing data
@@ -44,18 +45,18 @@ for suiteId in $runs ; do
   lastfile=${lastfile##*1y_}
   endyear=${lastfile%1201-*}
 
-
+  # PROCESSING: PICK CORRECT MASKING
   echo "Processing files from ${startyear} to ${endyear}"
   ./run_proc.bash -B UKESM/bathy_remove-000_match_wrap-eORCA1_MARINEVAL.nc UKESM/mesh_mask_remove-000_match_wrap-eORCA1_MARINEVAL.nc ${startyear} ${endyear} 1y ${suiteId}
 done
 
-## Plot
+## SELECT WHICH DATA TO PLOT
 timestamp=$(date +%Y-%m-%d)
 echo Plot produced on ${timestamp}
 ./run_plot_VALGLO_30y.bash UKESM_VALGLO_${timestamp} ${runs} u-by230
 ./run_plot_VALNA_30y.bash UKESM_VALNA_${timestamp} 1y ${runs} u-by230
 ./run_plot_VALSO_30y.bash UKESM_VALSO_${timestamp} 1y ${runs} u-by230
 
-## Save and move figure to shared folder
+## DEFINE WHERE TO SAVE THE FIGURE AND ITS NAME
 mv /home/users/andrea.rochner/public_html/CMIP7_piControl/*.png /home/users/andrea.rochner/PROJECTS/CMIP7/MONITORING/Marine_Val_CMIP7/CMIP_piC_plots/.
 cp UKESM_VAL*_${timestamp}.png /home/users/andrea.rochner/public_html/CMIP7_piControl/.
