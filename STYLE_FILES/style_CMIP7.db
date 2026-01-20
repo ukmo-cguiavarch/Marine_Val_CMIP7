@@ -1,13 +1,12 @@
  runid     |     name            |   line   |   color       |
- u-ds596   | GC5c (i3p211) N96 ORCA1 UM13.8 piControl with CMIP6 forcings| -    | black   |
- u-ds709   | GC5c (r2i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP6 forcings. ICs Y3200 | -    | mediumseagreen      |
- u-ds990   | GC5c (r3i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings: solar+volcanic. ICs Y3200 | -    | steelblue        |
- u-dt112   | GC5c (r4i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings: all except ozone. ICs Y3200 | -    | darkorange   |
- u-dt924   | GC5c (r5i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings: all except ozone. ICs Y3430 | -    | orangered   |
- u-du452   | GC5c (r6i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings. ICs Y3607 | -    | darkred   |
- u-du917   | GC5c (r7i3p211f1) N96 ORCA1 UM13.8 piControl with CMIP7 forcings. ICs Y3736 | -    | navy   |
- u-du786   | u-du786 - UKESM1.3 shlat2d (EX)| -    | red |
- u-du743   | u-du743 - UKESM1.3 shlat2d (EX)| -    | orangered   |
- u-do474   | u-do474 - UKESM1.3 (XC40)| -    | black     |
- u-dq448   | u-dq448 - UKESM1.3 (EX)| -    | blue      | 
+ u-by230   | UKESM1.1 | -    | red   |
+ u-dv759   | u-dv759 (u-du046+slipBC+Ndep_fix+PE) | -    | black      |
+ u-dv764   | u-dv764 (u-dv759 minus ANDR) | -    | yellow        |
+ u-dv765   | u-dv765 (u-dv764 minus SI) | -    | blue  |
+ u-dv672   | u-dv672 (u-dv764 minus fsd) | -    | green   |
+ u-dv766   | u-dv766 (u-dv672 minus SI)  | -    | magenta   |
+ u-dv027   | u-dv766 (u-dv672 minus SI)  | -    | magenta   |
+
+
+
 
