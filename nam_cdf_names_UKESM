@@ -45,9 +45,9 @@
     cn_ve3v    = 'e3v_0'    !: e3 (3D)
     cn_ve3w    = 'e3w_0'    !: e3 (3D)
     cn_ve3tvvl = 'thkcello' !: e3 (4D)
-    cn_ve3wvvl = 'thkcello' !: e3 (4D)
-    cn_ve3uvvl = 'thkcello' !: e3 (4D)
-    cn_ve3vvvl = 'thkcello' !: e3 (4D)
+    cn_ve3wvvl = 'thkcellwo' !: e3 (4D)
+    cn_ve3uvvl = 'thkcelluo' !: e3 (4D)
+    cn_ve3vvvl = 'thkcellvo' !: e3 (4D)
 
     cn_vff  = 'ff_f'     !: f^2
 
@@ -71,8 +71,8 @@
 !---------------------------------------
 &namvars            ! Variable names                
 !---------------------------------------
-    cn_votemper  = 'thetao' !: conservative temperature
-    cn_vosaline  = 'so'     !: absolute salinity
+    cn_votemper  = 'thetao_pot' !: conservative temperature
+    cn_vosaline  = 'so_pra'     !: absolute salinity
     cn_vozocrtx  = 'uo'         !: zonal velocity
     cn_vomecrty  = 'vo'         !: meridional velocity
     cn_sozotaux  = 'tauuo'
