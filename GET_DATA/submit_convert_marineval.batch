@@ -8,37 +8,42 @@
 #SBATCH --time=240
 
 suiteId=$1
-DATAPATH=/data/scratch/andrea.rochner/MARINE_VAL
+RUNPATH=$2
+#DATAPATH=/data/scratch/andrea.rochner/MARINE_VAL
 
-if [ ! -d ${DATAPATH}/${suiteId} ]; then
-  echo "Directory for ${suiteId} does not exist. Create it..."
-  mkdir ${DATAPATH}/${suiteId}
-  mkdir ${DATAPATH}/${suiteId}/data
-fi
-DATAPATH=${DATAPATH}/${suiteId}
+#if [ ! -d ${DATAPATH}/${suiteId} ]; then
+#  echo "Directory for ${suiteId} does not exist. Create it..."
+#  mkdir ${DATAPATH}/${suiteId}
+#  mkdir ${DATAPATH}/${suiteId}/data
+#fi
+#DATAPATH=${DATAPATH}/${suiteId}
 
 
-moo get --fill-gaps moo:/crum/${suiteId}/ony.nc.file/nemo_${suiteId#*-}o_1y_*grid*[U,V,T]*  ${DATAPATH}/data/.
-moo get --fill-gaps moo:/crum/${suiteId}/ons.nc.file/nemo_${suiteId#*-}o_1s_????1201*grid*T*  ${DATAPATH}/data/.
-moo get --fill-gaps moo:/crum/${suiteId}/onm.nc.file/nemo_${suiteId#*-}o_1m_????0301*grid*T*  ${DATAPATH}/data/.
-moo get --fill-gaps moo:/crum/${suiteId}/onm.nc.file/nemo_${suiteId#*-}o_1m_????0901*grid*T*  ${DATAPATH}/data/.
+moo get --fill-gaps moo:/crum/${suiteId}/ony.nc.file/nemo_${suiteId#*-}o_1y_*grid*[U,V,T]*  ${RUNPATH}/.
+moo get --fill-gaps moo:/crum/${suiteId}/ons.nc.file/nemo_${suiteId#*-}o_1s_????1201*grid*T*  ${RUNPATH}/.
+moo get --fill-gaps moo:/crum/${suiteId}/onm.nc.file/nemo_${suiteId#*-}o_1m_????0301*grid*T*  ${RUNPATH}/.
+moo get --fill-gaps moo:/crum/${suiteId}/onm.nc.file/nemo_${suiteId#*-}o_1m_????0901*grid*T*  ${RUNPATH}/.
 
 module load scitools
-ROOT=${DATAPATH}/data/nemo_${suiteId#*-}o_1*
+ROOT=${RUNPATH}/nemo_${suiteId#*-}o_1*
 for FILE in ${ROOT}*grid-T* ; do
-   ncatted -a standard_name,"deptht",c,c,"depth" $FILE;
+#   ncatted -a standard_name,"deptht",c,c,"depth" $FILE;
    ncrename -v so,so_pra $FILE;
    ncrename -v thetao,thetao_pot $FILE;
-   ncrename -v thkcello,cell_thickness $FILE;
+   ncrename -v mlotst,somxzint1 $FILE
+#   ncrename -v thkcello,cell_thickness $FILE;
+#   ncrename -v masscello,e3t $FILE;
    echo $FILE;
 done
 
-for FILE in ${ROOT}*grid-U* ; do
-   ncatted -a standard_name,"depthu",c,c,"depth" $FILE;
-   echo $FILE;
-done
+#for FILE in ${ROOT}*grid-U* ; do
+#   ncatted -a standard_name,"depthu",c,c,"depth" $FILE;
+#   ncrename -v thkcelluo,e3u $FILE;
+#   echo $FILE;
+#done
 
-for FILE in ${ROOT}*grid-V* ; do
-   ncatted -a standard_name,"depthv",c,c,"depth" $FILE;
-   echo $FILE;
-done
+#for FILE in ${ROOT}*grid-V* ; do
+#   ncatted -a standard_name,"depthv",c,c,"depth" $FILE;
+#   ncrename -v thkcellvo,e3v $FILE;
+#   echo $FILE;
+#done
