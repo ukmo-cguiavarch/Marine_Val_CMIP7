@@ -155,4 +155,4 @@ rm runidname.png
 rm legend.png
 
 #display
-display -resize 30% $KEY.png
+#display -resize 30% $KEY.png
