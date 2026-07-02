@@ -10,12 +10,10 @@
     "tmask_WWED_mindepth-390.nc"
   ],
   "runHTC": [
-    "tmask_NA_GYRE_minisobath-1000.nc",
-    "tmask_NA_GYRE_obs-woa13v2_minisobath-1000.nc"
+    "tmask_NA_GYRE_minisobath-1000.nc"
   ],
   "runMedOVF": [
-    "tmask_MEDOVF_mindepth-500_maxdepth-2500.nc",
-    "tmask_MEDOVF_obs-woa13v2_mindepth-500_maxdepth-2500.nc"
+    "tmask_MEDOVF_mindepth-500_maxdepth-2500.nc"
   ],
   "runMLD_LabSea": [
     "tmask_LAB_SEA_minisobath-1000.nc"
@@ -57,8 +55,28 @@
   "runSpAvgUpper": [
     "tmask_GLO_maxdepth-1000.nc"
   ],
+  "runHTCGLO": [
+    "tmask_GLO.nc"
+  ],
+  "runHTCLower": [
+    "tmask_GLO_mindepth-1000.nc"
+  ],
+  "runHTCUpper": [
+    "tmask_GLO_maxdepth-1000.nc"
+  ],
+  "runHTC200m": [
+    "tmask_GLO_maxdepth-200.nc"
+  ],
+  "runHTC700m": [
+    "tmask_GLO_maxdepth-700.nc"
+  ],
+  "runHTC700_2000m": [
+    "tmask_GLO_mindepth-700_maxdepth-2000.nc"
+  ],
+  "runHTCbelow2000m": [
+    "tmask_GLO_mindepth-2000.nc"
+  ],
   "runSTC": [
-    "tmask_NA_GYRE_minisobath-1000.nc",
-    "tmask_NA_GYRE_obs-woa13v2_minisobath-1000.nc"
+    "tmask_NA_GYRE_minisobath-1000.nc"
   ]
 }

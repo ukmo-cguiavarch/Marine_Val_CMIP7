@@ -5,7 +5,7 @@ ulimit -s unlimited
 ##### USER CHOICES START ######
 
 # top level directory
-export MARINE_VAL=/home/users/catherine.guiavarch/VALIDATION/Marine_Val_CMIP7
+export MARINE_VAL=/home/users/catherine.guiavarch/VALIDATION/Marine_Val_CMIP7_dev
 
 # Path of the folder where mesh_mask bathy and are locally stored 
 # (names of mesh mask and bathy are arguments to this script)
@@ -38,7 +38,7 @@ export OBSPATH=/data/users/nemo/obs_data/NOAA_WOA13v2/1955-2012/025/orca025/
 export OBS_MESH=/data/users/nemo/obs_data/NOAA_WOA13v2/1955-2012/025/mesh_mask_woa13v2.nc 
 export OBS_ABS_SAL=${OBSPATH}/woa13v2.omip-clim.abs_sal.nc # Absolute salinity
 export OBS_CON_TEM=${OBSPATH}/woa13v2.omip-clim.con_tem.nc # Conservative temperature
-export runOBS=1      # run observations for HTC, STC and MEDOVF
+export runOBS=0      # run observations for HTC, STC and MEDOVF
 
 # Retrieve data from MASS
 runRETRIEVE_DATA=0  # Set to 1 to retrieve data from MASS, 0 if you have previously downloaded the data
@@ -63,24 +63,31 @@ runQHF=0
 runSST_SO=0 # Mean Southern Ocean SST between ?? and ??
 runSST_GLO=0
 runSSS_GLO=0
+runHTCGLO=1
+runHTCLower=1
+runHTCUpper=1
+runHTC200m=1
+runHTC700m=1
+runHTC700_2000m=1
+runHTCbelow2000m=1
 
 
 # VALSO (Southern Ocean)
-runACC=0            # Drake Passage net eastward transport
+runACC=1            # Drake Passage net eastward transport
 runMLD_Weddell=0    # Max wintertime mixed layer depth in Weddell Sea
-runBSF_SO=0         # Max streamfunction in Weddell gyre and Ross gyre
+runBSF_SO=1         # Max streamfunction in Weddell gyre and Ross gyre
 runDEEPTS=0         # Deep salinity in West Weddell and West Ross Seas
                     # and deep temperature in Amundsen and East Ross Seas
 runAABW=0           # Volume of water for a given sigma4 threshold
 
 # VALNA (North Atlantic)
-runBSF_NA=0         # North Atlantic subpolar gyre strength
+runBSF_NA=1         # North Atlantic subpolar gyre strength
 runHTC=0            # North Atlantic subpolar gyre heat content
                     # NB: MHT metric only works if relevant diagnostic 
                     #     in model output. Therefore, the user needs to 
                     #     explicitly activate this diagnostic.
 runSTC=0            # North Atlantic subpolar gyre salt content
-runAMOC=0           # AMOC at 26.5N at max. depth
+runAMOC=1           # AMOC at 26.5N at max. depth
 runMLD_LabSea=0     # Mixed layer depth in Labrador Sea in March
 runSSS_LabSea=0     # Mean SSS anomaly in Labrador Sea
 runSST_NWCorner=0   # Mean SST anomaly off Newfoundland
@@ -130,6 +137,13 @@ if [[ $RUNVALSPIN == 1 || $RUNALL == 1 ]]; then
    runSST_SO=1 # Mean Southern Ocean SST between ?? and ??
    runSST_GLO=1
    runSSS_GLO=1
+   runHTCGLO=1
+   runHTCLower=1
+   runHTCUpper=1
+   runHTC200m=1
+   runHTC700m=1
+   runHTC700_2000m=1
+   runHTCbelow2000m=1
 fi
 
 

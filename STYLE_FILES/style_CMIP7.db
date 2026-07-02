@@ -9,5 +9,16 @@
  u-du786   | u-du786 - UKESM1.3 shlat2d (EX)| -    | red |
  u-du743   | u-du743 - UKESM1.3 shlat2d (EX)| -    | orangered   |
  u-do474   | u-do474 - UKESM1.3 (XC40)| -    | black     |
- u-dq448   | u-dq448 - UKESM1.3 (EX)| -    | blue      | 
-
+ u-dq448   | u-dq448 - UKESM1.3 (EX)| -    | blue      |
+ u-dv341   | UKCM2-LL piControl. ICs Y1850 | -    | teal   | 
+ u-dv623   | UKCM2-LL 1pctCO2. ICs Y1850 | -    | darkorange |
+ u-dv622   | UKCM2-LL historical. ICs Y1850 | - | navy |
+ u-dv657   | UKCM2-LL 4xCO2. ICs Y1860 | - | darkred | 
+ u-dw052   | UKCM2-LL 1pctCO2. ICs Y2100 | -    | gold |
+ u-dw300   | UKCM2-LL 4xCO2. ICs Y2100 | - | indianred | 
+ u-dw373   | UKCM2-LL historical. ICs Y2100 | - | steelblue |
+ u-dx233   | UKCM2-LL historical. Ozone v2 | - | blue |
+ u-dy002   | UKCM2-LL piControl. ICs Y2078 - ozone | -    | turquoise   |
+ u-dk469   | GC5-central | - | black | 
+ u-ar766   | GC3.1 | - |darkred|
+ u-da274   | GC5.0 | - |blue|

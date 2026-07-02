@@ -6,12 +6,12 @@
 moo_wait() {
 # Limit the number of MASS retrievals that we submit in parallel. The recommendation is to keep
 # this to around 30 max. 
-let njobs=$(sacct -s pd,r | grep "moo" | wc -l)
+let njobs=$(squeue --format '%.100j' --noheader --user $USER | grep "moo" | wc -l)
 while (( ${njobs} > 25 ))
 do
-  let njobs=$(sacct -s pd,r | grep "moo" | wc -l)
+  let njobs=$(squeue --format '%.100j' --noheader --user $USER | grep "moo" | wc -l)
   echo "Number of MASS retrievals : $njobs. Sleeping."
-  sleep 10s
+  sleep 1m
 done
 }
 
@@ -23,13 +23,13 @@ slurm_wait() {
 # Now that we have chunking of MASS restores, a lot of processing jobs can be submitted all at once
 # after a chunk of files have been restored and might not all show up in the queue. So put in a short
 # sleep between each job submission as well.  
-sleep 0.1s
-let njobs=$(sacct | grep "PENDING" | wc -l)+$(sacct | grep "RUNNING" | wc -l)
+sleep 1s
+let njobs=$(squeue --format '%.100j' --noheader --user $USER | wc -l)
 while (( $njobs > 480 ))
 do
-  let njobs=$(sacct | grep "PENDING" | wc -l)+$(sacct | grep "RUNNING" | wc -l)
+  let njobs=$(squeue --format '%.100j' --noheader --user $USER | wc -l)
   echo "Number of slurm jobs : $njobs. Sleeping."
-  sleep 1m
+  sleep 2m
 done
 }
 
@@ -229,7 +229,7 @@ for RUNID in `echo $RUNIDS`; do
             moo_wait
             [[ $runTRP == 1 || $runBSF == 1 || $runMOC == 1 ]] && mooUyid=$(retrieve_data $RUNID $FREQ grid-U $TAG_LIST)
             moo_wait
-            [[ $runTRP == 1 || $runQHF == 1 || $runSpAvg == 1 || $runSpAvgUpper == 1 || $runSpAvgLower == 1 ||$runTS == 1 || $runMOC == 1 || $runHTC == 1 || $runSTC == 1 || $runGSL_NAC == 1 || $runMHT == 1 || $runQHF == 1 || $runMedOVF == 1 || $runAABW == 1 ]] && mooTyid=$(retrieve_data $RUNID $FREQ grid-T $TAG_LIST)
+            [[ $runTRP == 1 || $runQHF == 1 || $runSpAvg == 1 || $runSpAvgUpper == 1 || $runSpAvgLower == 1 ||$runTS == 1 || $runMOC == 1 || $runHTC == 1 ||  $runHTCGLO == 1 ||  $runHTCUpper == 1 ||  $runHTCLower == 1 || $runHTC200m == 1 || $runHTC700m == 1 || $runHTC700_2000m == 1 || $runHTCbelow2000m == 1 || $runSTC == 1 || $runGSL_NAC == 1 || $runMHT == 1 || $runQHF == 1 || $runMedOVF == 1 || $runAABW == 1 ]] && mooTyid=$(retrieve_data $RUNID $FREQ grid-T $TAG_LIST)
          fi
 
          echo "mooTyid : $mooTyid"
@@ -276,6 +276,14 @@ for RUNID in `echo $RUNIDS`; do
 	    [[ $runSpAvg == 1 ]]        && run_tool mk_spatial_avg $TAG $RUNID $FREQ $mooTyid
             [[ $runSpAvgUpper == 1 ]]        && run_tool mk_spatial_avg_upper $TAG $RUNID $FREQ $mooTyid
             [[ $runSpAvgLower == 1 ]]        && run_tool mk_spatial_avg_lower $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTCGLO == 1 ]]        && run_tool mk_htc_glo $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTCLower == 1 ]]        && run_tool mk_htc_glo_lower $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTCUpper == 1 ]]        && run_tool mk_htc_glo_upper $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTC200m == 1 ]]        && run_tool mk_htc_glo_200m $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTC700m == 1 ]]        && run_tool mk_htc_glo_700m $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTC700_2000m == 1 ]]   && run_tool mk_htc_glo_700_2000m $TAG $RUNID $FREQ $mooTyid
+            [[ $runHTCbelow2000m == 1 ]]  && run_tool mk_htc_glo_below2000m $TAG $RUNID $FREQ $mooTyid
+
          done
          let tagcount=0
          TAG_LIST=""

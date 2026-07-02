@@ -56,8 +56,8 @@ if [[ $? -ne 0 ]]; then exit 42; fi
 # MLD
 # max mld in WEDDELL GYRE
 echo 'plot max mld in Weddell Gyre time series'
-#python ${SCRPATH}/plot_time_series_test.py -noshow -runid $RUNIDS -f *WMXL*1m*0901*T.nc -var '(max_somxzint1|somxzint1)' -title "Max Kara mld WG (m)" -dir ${DATPATH} -o ${KEY}_WG_max_karamld -obs OBS/WG_karamld_max_obs.txt
-python ${SCRPATH}/plot_time_series.py -noshow -runid $RUNIDS -f *WMXL*1m*0901*T.nc -var '(max_somxzint1|somxzint1)' -title "Max Kara mld WG (m)" -dir ${DATPATH} -o ${KEY}_WG_max_karamld -obs OBS/WG_karamld_max_obs.txt
+python ${SCRPATH}/plot_time_series_test.py -noshow -runid $RUNIDS -f *WMXL*1m*0901*T.nc -var '(max_somxzint1|somxzint1)' -title "Max Kara mld WG (m)" -dir ${DATPATH} -o ${KEY}_WG_max_karamld -obs OBS/WG_karamld_max_obs.txt
+#python ${SCRPATH}/plot_time_series.py -noshow -runid $RUNIDS -f *WMXL*1m*0901*T.nc -var '(max_somxzint1|somxzint1)' -title "Max Kara mld WG (m)" -dir ${DATPATH} -o ${KEY}_WG_max_karamld -obs OBS/WG_karamld_max_obs.txt
 if [[ $? -ne 0 ]]; then exit 42; fi
 
 # AABW

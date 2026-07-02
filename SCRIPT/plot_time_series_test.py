@@ -33,10 +33,15 @@ class run(object):
                 ncid    = nc.Dataset(cf)
 
                 ncvtime = ncid.variables[ctime]
-                if 'units' in ncvtime.ncattrs():
-                    cunits = ncvtime.units
+                # Special-case for runid 'u-dv341': 
+#                if self.runid == 'u-dv341':
+                if self.runid in ('u-dv341', 'u-dy002'):
+                    cunits = "seconds since 3693-01-01 00:00:00"
                 else:
-                    cunits = "seconds since 1900-01-01 00:00:00"
+                    if 'units' in ncvtime.ncattrs():
+                        cunits = ncvtime.units
+                    else:
+                        cunits = "seconds since 1900-01-01 00:00:00"
     
                 # define calendar
                 if 'calendar' in ncvtime.ncattrs():

@@ -100,6 +100,13 @@ proc_tmask_map = {
      "runSpAvg": [{**domain_params("GLO"), "obs": None}],
      "runSpAvgLower": [{**domain_params("GLO"), "mindepth": 1000, "maxdepth": None, "obs": None}],
      "runSpAvgUpper": [{**domain_params("GLO"), "mindepth": None, "maxdepth": 1000, "obs": None}],
+     "runHTCGLO": [{**domain_params("GLO"),"obs": None}],
+     "runHTCLower": [{**domain_params("GLO"), "mindepth": 1000, "maxdepth": None, "obs": None}],
+     "runHTCUpper": [{**domain_params("GLO"), "mindepth": None, "maxdepth": 1000, "obs": None}],
+     "runHTC200m": [{**domain_params("GLO"), "mindepth": None, "maxdepth": 200, "obs": None}],
+     "runHTC700m": [{**domain_params("GLO"), "mindepth": None, "maxdepth": 700, "obs": None}],
+     "runHTC700_2000m": [{**domain_params("GLO"), "mindepth": 700, "maxdepth": 2000, "obs": None}],
+     "runHTCbelow2000m": [{**domain_params("GLO"), "mindepth": 2000, "maxdepth": None, "obs": None}],
      "runSTC": [{**domain_params("NA_GYRE"), "minisobath": 1000, "maxisobath": None, "obs": None},
                 {**domain_params("NA_GYRE"), "minisobath": 1000, "maxisobath": None, "obs": 'woa13v2'}]
 }
