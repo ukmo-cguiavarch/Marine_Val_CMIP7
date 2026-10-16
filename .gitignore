@@ -127,3 +127,27 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#figures
+FIGURES/*
+*.png
+
+#text
+*.txt
+
+run_plot_VALGLO_1850_30y_all.bash 
+run_plot_VALGLO_GC5.bash 
+run_plot_VALGLO_piControl.bash
+run_plot_VALGLO_piControl_GC5.bash
+run_plot_VALNA_GC5.bash
+run_plot_VALNA_piControl.bash
+run_plot_VALSO_GC5.bash
+run_plot_VALSO_piControl.bash
+SCRIPT/plot_time_series_GC5c_paper.py
+SCRIPT/plot_time_series_piControl.py
+
+JOBOUT/*
+nam_cdf_names_GC3.1
+SCRIPT/tmasks_all_params.json
+SCRIPT/tmasks_generated.json
+

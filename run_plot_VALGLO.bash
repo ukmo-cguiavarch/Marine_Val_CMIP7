@@ -5,7 +5,7 @@ if [ $# -eq 0 ] ; then echo 'need a [KEYWORD] (will be inserted inside the figur
 . ./param.bash
 module load scitools
 
-DATPATH=${SCRATCH}/MARINE_VAL
+#DATPATH=${SCRATCH}/MARINE_VAL
 
 KEY=${1}
 RUNIDS=${@:2}

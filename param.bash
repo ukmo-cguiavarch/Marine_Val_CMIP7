@@ -31,6 +31,7 @@ export SCRPATH=${MARINE_VAL}/SCRIPT/
 
 # Top-level working directory
 # (working dir for $RUNID = $DATPATH/$RUNID)
+#export DATPATH=${DATADIR}/MARINE_VAL/
 export DATPATH=${SCRATCH}/MARINE_VAL/
 
 # Observations
@@ -46,10 +47,10 @@ runRETRIEVE_DATA=0  # Set to 1 to retrieve data from MASS, 0 if you have previou
 RUNALL=0       # run all possible metrics
 
 # diagnostics bundles
-RUNVALSO=1     # Southern Ocean metrics
-RUNVALNA=1     # North Atlantic metrics
+RUNVALSO=0     # Southern Ocean metrics
+RUNVALNA=0     # North Atlantic metrics
 RUNVALTRANS=0  # Transports/exchanges in straits
-RUNVALSPIN=1   # Spin-up metrics
+RUNVALSPIN=0   # Spin-up metrics
 # DISABLED, SINCE IT IS NOT WORKING YET
 #RUNVALGLO=0    # Global metrics
 
@@ -64,30 +65,30 @@ runSST_SO=0 # Mean Southern Ocean SST between ?? and ??
 runSST_GLO=0
 runSSS_GLO=0
 runHTCGLO=1
-runHTCLower=1
-runHTCUpper=1
-runHTC200m=1
+runHTCLower=0
+runHTCUpper=0
+runHTC200m=0
 runHTC700m=1
 runHTC700_2000m=1
 runHTCbelow2000m=1
 
 
 # VALSO (Southern Ocean)
-runACC=1            # Drake Passage net eastward transport
+runACC=0            # Drake Passage net eastward transport
 runMLD_Weddell=0    # Max wintertime mixed layer depth in Weddell Sea
-runBSF_SO=1         # Max streamfunction in Weddell gyre and Ross gyre
+runBSF_SO=0         # Max streamfunction in Weddell gyre and Ross gyre
 runDEEPTS=0         # Deep salinity in West Weddell and West Ross Seas
                     # and deep temperature in Amundsen and East Ross Seas
 runAABW=0           # Volume of water for a given sigma4 threshold
 
 # VALNA (North Atlantic)
-runBSF_NA=1         # North Atlantic subpolar gyre strength
+runBSF_NA=0         # North Atlantic subpolar gyre strength
 runHTC=0            # North Atlantic subpolar gyre heat content
                     # NB: MHT metric only works if relevant diagnostic 
                     #     in model output. Therefore, the user needs to 
                     #     explicitly activate this diagnostic.
 runSTC=0            # North Atlantic subpolar gyre salt content
-runAMOC=1           # AMOC at 26.5N at max. depth
+runAMOC=0           # AMOC at 26.5N at max. depth
 runMLD_LabSea=0     # Mixed layer depth in Labrador Sea in March
 runSSS_LabSea=0     # Mean SSS anomaly in Labrador Sea
 runSST_NWCorner=0   # Mean SST anomaly off Newfoundland
