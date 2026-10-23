@@ -12,11 +12,9 @@
   "runHTC": [
     "tmask_NA_GYRE_minisobath-1000.nc"
   ],
-  "runMedOVF": [
-    "tmask_MEDOVF_mindepth-500_maxdepth-2500.nc"
-  ],
-  "runMLD_LabSea": [
-    "tmask_LAB_SEA_minisobath-1000.nc"
+  "runMLD": [
+    "tmask_LAB_SEA_minisobath-1000.nc",
+    "tmask_GIN_SEA_minisobath-1000.nc"
   ],
   "runMLD_Weddell": [
     "tmask_WG_minisobath-1000.nc"
@@ -28,11 +26,9 @@
     "tmask_WG_minisobath-1000.nc",
     "tmask_RG_minisobath-1000.nc"
   ],
-  "runSSS_LabSea": [
-    "tmask_LAB_SEA_maxdepth-1.5.nc"
-  ],
-  "runSST_NWCorner": [
-    "tmask_NEWFOUND_maxdepth-1.5.nc"
+  "runSSS_NA": [
+    "tmask_LAB_SEA_maxdepth-1.5.nc",
+    "tmask_GIN_SEA_maxdepth-1.5.nc"
   ],
   "runSST_SO": [
     "tmask_SO_maxdepth-1.5.nc"
@@ -40,41 +36,61 @@
   "runSST_GLO": [
     "tmask_GLO_maxdepth-1.5.nc"
   ],
+  "runSST_NA": [
+    "tmask_GIN_SEA_maxdepth-1.5.nc",
+    "tmask_LAB_SEA_maxdepth-1.5.nc",
+    "tmask_NEWFOUND_maxdepth-1.5.nc"
+  ],
   "runSSS_GLO": [
     "tmask_GLO_maxdepth-1.5.nc"
   ],
   "runQHF": [
     "tmask_GLO.nc"
   ],
-  "runSpAvg": [
-    "tmask_GLO.nc"
-  ],
-  "runSpAvgLower": [
-    "tmask_GLO_mindepth-1000.nc"
-  ],
-  "runSpAvgUpper": [
-    "tmask_GLO_maxdepth-1000.nc"
-  ],
   "runHTCGLO": [
-    "tmask_GLO.nc"
+    "tmask_GLO.nc",
+    "tmask_SO_HEAT.nc",
+    "tmask_NA_HEAT.nc"
   ],
-  "runHTCLower": [
-    "tmask_GLO_mindepth-1000.nc"
+  "runSTCGLO": [
+    "tmask_GLO.nc",
+    "tmask_SO_HEAT.nc",
+    "tmask_NA_HEAT.nc"
   ],
-  "runHTCUpper": [
-    "tmask_GLO_maxdepth-1000.nc"
-  ],
-  "runHTC200m": [
-    "tmask_GLO_maxdepth-200.nc"
+  "runSTC200m": [
+    "tmask_GLO_maxdepth-200.nc",
+    "tmask_SO_HEAT_maxdepth-700.nc",
+    "tmask_NA_HEAT_maxdepth-700.nc"
   ],
   "runHTC700m": [
-    "tmask_GLO_maxdepth-700.nc"
+    "tmask_GLO_maxdepth-700.nc",
+    "tmask_SO_HEAT_maxdepth-700.nc",
+    "tmask_NA_HEAT_maxdepth-700.nc"
+  ],
+  "runSTC700m": [
+    "tmask_GLO_maxdepth-700.nc",
+    "tmask_SO_HEAT_maxdepth-700.nc",
+    "tmask_NA_HEAT_maxdepth-700.nc"
   ],
   "runHTC700_2000m": [
-    "tmask_GLO_mindepth-700_maxdepth-2000.nc"
+    "tmask_GLO_mindepth-700_maxdepth-2000.nc",
+    "tmask_SO_HEAT_mindepth-700_maxdepth-2000.nc",
+    "tmask_NA_HEAT_mindepth-700_maxdepth-2000.nc"
+  ],
+  "runSTC700_2000m": [
+    "tmask_GLO_mindepth-700_maxdepth-2000.nc",
+    "tmask_SO_HEAT_mindepth-700_maxdepth-2000.nc",
+    "tmask_NA_HEAT_mindepth-700_maxdepth-2000.nc"
   ],
   "runHTCbelow2000m": [
-    "tmask_GLO_mindepth-2000.nc"
+    "tmask_GLO_mindepth-2000.nc",
+    "tmask_SO_HEAT_mindepth-2000.nc",
+    "tmask_NA_HEAT_mindepth-2000.nc"
+  ],
+  "runSTCbelow2000m": [
+    "tmask_GLO_mindepth-2000.nc",
+    "tmask_SO_HEAT_mindepth-2000.nc",
+    "tmask_NA_HEAT_mindepth-2000.nc"
   ],
   "runSTC": [
     "tmask_NA_GYRE_minisobath-1000.nc"

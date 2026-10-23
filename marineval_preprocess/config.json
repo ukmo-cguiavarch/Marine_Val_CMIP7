@@ -1,0 +1,18 @@
+{
+  "run_id": "dv341",
+  "work_root": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/pipeline",
+  "converter": "/home/users/catherine.guiavarch/VALIDATION/Marine_Val/SCRIPT/convert_nemo_eos80.py",
+  "time_mode": "rebase",
+  "expected_time_units": "seconds since 1900-01-01 00:00:00",
+  "target_time_units": "seconds since 1850-01-01 00:00:00",
+  "delete_raw_after_chunk": true,
+  "qos": "normal",
+  "account": "",
+  "partition": "",
+  "retrieve_memory": "4G",
+  "process_memory": "120G",
+  "retrieve_walltime": "04:00:00",
+  "process_walltime": "04:00:00",
+  "retrieve_concurrency": 1,
+  "process_concurrency": 2
+}

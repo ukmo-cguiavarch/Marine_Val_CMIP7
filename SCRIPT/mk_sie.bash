@@ -17,11 +17,11 @@ RUN_NAME=${RUNID#*-}
 #${SCRPATH}/get_data.bash $RUNID $FREQ $TAG grid-${GRID}
 
 # check presence of input file
-FILE=`ls [nu]*${RUN_NAME}o_${FREQ}_${TAG}*_grid[-_]T.nc`
+FILE=`ls [su]*${RUN_NAME}i_${FREQ}_${TAG}*_icemod.nc`
 if [ ! -f $FILE ] ; then echo "$FILE is missing; exit"; echo "E R R O R in : ./mk_sie.bash $@ (see SLURM/${RUNID}/sie_${FREQ}_${TAG}.out)" >> ${EXEPATH}/ERROR.txt ; exit 1 ; fi
 
 # make sie
-FILEOUT=ARC_sie_nemo_${RUN_NAME}o_${FREQ}_${TAG}.nc
+FILEOUT=SIE_si3_${RUN_NAME}o_${FREQ}_${TAG}.nc
 $CDFPATH/cdficediags -i $FILE -o tmp_$FILEOUT
 
 # mv output file

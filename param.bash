@@ -31,8 +31,8 @@ export SCRPATH=${MARINE_VAL}/SCRIPT/
 
 # Top-level working directory
 # (working dir for $RUNID = $DATPATH/$RUNID)
-#export DATPATH=${DATADIR}/MARINE_VAL/
-export DATPATH=${SCRATCH}/MARINE_VAL/
+export DATPATH=${DATADIR}/MARINE_VAL/
+#export DATPATH=${SCRATCH}/MARINE_VAL/
 
 # Observations
 export OBSPATH=/data/users/nemo/obs_data/NOAA_WOA13v2/1955-2012/025/orca025/
@@ -46,6 +46,8 @@ runRETRIEVE_DATA=0  # Set to 1 to retrieve data from MASS, 0 if you have previou
 
 RUNALL=0       # run all possible metrics
 
+RUNCMIP7=1
+
 # diagnostics bundles
 RUNVALSO=0     # Southern Ocean metrics
 RUNVALNA=0     # North Atlantic metrics
@@ -57,21 +59,20 @@ RUNVALSPIN=0   # Spin-up metrics
 # custom:
 
 #VALSPIN
-runSpAvg=0
-runSpAvgUpper=0
-runSpAvgLower=0
 runQHF=0
 runSST_SO=0 # Mean Southern Ocean SST between ?? and ??
 runSST_GLO=0
 runSSS_GLO=0
-runHTCGLO=1
-runHTCLower=0
-runHTCUpper=0
+runHTCGLO=0
 runHTC200m=0
-runHTC700m=1
-runHTC700_2000m=1
-runHTCbelow2000m=1
-
+runHTC700m=0
+runHTC700_2000m=0
+runHTCbelow2000m=0
+runSTCGLO=0
+runSTC200m=0
+runSTC700m=0
+runSTC700_2000m=0
+runSTCbelow2000m=0
 
 # VALSO (Southern Ocean)
 runACC=0            # Drake Passage net eastward transport
@@ -89,9 +90,9 @@ runHTC=0            # North Atlantic subpolar gyre heat content
                     #     explicitly activate this diagnostic.
 runSTC=0            # North Atlantic subpolar gyre salt content
 runAMOC=0           # AMOC at 26.5N at max. depth
-runMLD_LabSea=0     # Mixed layer depth in Labrador Sea in March
-runSSS_LabSea=0     # Mean SSS anomaly in Labrador Sea
-runSST_NWCorner=0   # Mean SST anomaly off Newfoundland
+runMLD=0            # Mixed layer depth in Labrador Sea and GIN Sea in March
+runSSS_NA=0         # Mean SSS anomaly in Labrador Sea
+runSST_NA=0         # Mean SST anomaly off Newfoundland
 
 # DISABLED, SINCE IT IS NOT WORKING YET
 # runOVF=0            # Mean overflow bottom temperature and salinity (below 27.8 isopycnal) 
@@ -107,16 +108,16 @@ runOSNAP=0          # Overturning streamfunction profile in density space accros
                     #     the user needs to explicitly activate this diagnostic.
 
 # VALTRANS (Transports and exchanges in straits)
-runMargSea=0        # Marginal Seas exchanges: Gibraltar, Bab el Mandeb, Strait of Hormuz
-runITF=0            # Indonesian Throughflow: Lombok Strait, Ombai Strait, Timor Passage
-runNAtlOverflows=0  # North Atlantic deep overflows: Denmark Strait, Faroe Bank Channel
-runArcTrans=0       # Arctic transports: Fram Strait, Bering Strait, Davis Strait, Barents Sea
+runMargSea=1        # Marginal Seas exchanges: Gibraltar, Bab el Mandeb, Strait of Hormuz
+runITF=1            # Indonesian Throughflow: Lombok Strait, Ombai Strait, Timor Passage
+runNAtlOverflows=1  # North Atlantic deep overflows: Denmark Strait, Faroe Bank Channel
+runArcTrans=1       # Arctic transports: Fram Strait, Bering Strait, Davis Strait, Barents Sea
 
 # DISABLED, SINCE IT IS NOT WORKING YET
 # VALGLO (Global metrics)
 # The VALGLO package also includes a number of metrics in other packages above.
 #runMHT=0            # Atlantic(?) meridional heat transport
-#runSIE=0            # Arctic sea ice extent
+runSIE=0            # Arctic sea ice extent
 #runQHF=0            #
 
 ##### USER CHOICES END ######
@@ -169,6 +170,42 @@ if [[ $RUNVALTRANS == 1 || $RUNALL == 1 ]]; then
    runNAtlOverflows=1
    runArcTrans=1
 fi
+
+if [[ $RUNCMIP7 == 1 ]]; then
+   runQHF=1
+   runSST_SO=1
+   runSST_GLO=1
+   runSSS_GLO=1
+   runHTCGLO=1
+   runHTC200mfi=1
+   runHTC700m=1
+   runHTC700_2000m=1
+   runHTCbelow2000m=1
+   runSTCGLO=1
+   runSTC200m=1
+   runSTC700m=1
+   runSTC700_2000m=1
+   runSTCbelow2000m=1
+   runACC=1            # Drake Passage net eastward transport
+   runMLD_Weddell=1    # Max wintertime mixed layer depth in Weddell Sea
+   runBSF_SO=1         # Max streamfunction in Weddell gyre and Ross gyre
+   runDEEPTS=1         # Deep salinity in West Weddell and West Ross Seas
+   runAABW=1           # Volume of water for a given sigma4 threshold
+   runBSF_NA=1         # North Atlantic subpolar gyre strength
+   runHTC=1            # North Atlantic subpolar gyre heat content
+   runSTC=1            # North Atlantic subpolar gyre salt content
+   runAMOC=1           # AMOC at 26.5N at max. depth
+   runMLD=1            # Mixed layer depth in Labrador Sea and GIN Sea in March
+   runSSS_NA=1         # Mean SSS anomaly in Labrador Sea
+   runSST_NA=1         # Mean SST anomaly off Newfoundland
+   runGSL_NAC=1        # GS separation latitude and NA current latitude
+   runMargSea=1        # Marginal Seas exchanges: Gibraltar, Bab el Mandeb, Strait of Hormuz
+   runITF=1            # Indonesian Throughflow: Lombok Strait, Ombai Strait, Timor Passage
+   runNAtlOverflows=1  # North Atlantic deep overflows: Denmark Strait, Faroe Bank Channel
+   runArcTrans=1       # Arctic transports: Fram Strait, Bering Strait, Davis Strait, Barents Sea
+   runSIE=1            # Arctic sea ice extent
+fi
+
 
 # Disabled since it is not ready yet 
 # if [[ $RUNVALGLO == 1 || $RUNALL == 1 ]]; then

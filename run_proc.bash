@@ -131,7 +131,7 @@ if [[ -f ERROR.txt ]]; then rm ERROR.txt ; fi
 
 [[ $runACC == 1 || $runMargSea == 1 || $runITF == 1 || $runNAtlOverflows == 1  || $runArcTrans == 1 ]] && runTRP=1
 [[ $runBSF_SO == 1 || $runBSF_NA == 1 ]] && runBSF=1
-[[ $runDEEPTS == 1 || $runSSS_LabSea == 1 || $runSSS_GLO == 1 || $runSST_SO == 1 || $runSST_GLO == 1 ||$runSST_NWCorner == 1 ]] && runTS=1
+[[ $runDEEPTS == 1 || $runSSS_NA == 1 || $runSSS_GLO == 1 || $runSST_SO == 1 || $runSST_GLO == 1 ||$runSST_NA == 1 ]] && runTS=1
 [[ $runAMOC == 1 || $runOSNAP == 1 ]] && runMOC=1
 [[ $runTRP == 1 || $runOSNAP == 1 ]] && needBATHY=1
 
@@ -229,7 +229,7 @@ for RUNID in `echo $RUNIDS`; do
             moo_wait
             [[ $runTRP == 1 || $runBSF == 1 || $runMOC == 1 ]] && mooUyid=$(retrieve_data $RUNID $FREQ grid-U $TAG_LIST)
             moo_wait
-            [[ $runTRP == 1 || $runQHF == 1 || $runSpAvg == 1 || $runSpAvgUpper == 1 || $runSpAvgLower == 1 ||$runTS == 1 || $runMOC == 1 || $runHTC == 1 ||  $runHTCGLO == 1 ||  $runHTCUpper == 1 ||  $runHTCLower == 1 || $runHTC200m == 1 || $runHTC700m == 1 || $runHTC700_2000m == 1 || $runHTCbelow2000m == 1 || $runSTC == 1 || $runGSL_NAC == 1 || $runMHT == 1 || $runQHF == 1 || $runMedOVF == 1 || $runAABW == 1 ]] && mooTyid=$(retrieve_data $RUNID $FREQ grid-T $TAG_LIST)
+            [[ $runTRP == 1 || $runQHF == 1 || $runSTCGLO == 1 ||$runTS == 1 || $runMOC == 1 || $runHTC == 1 || $runSTC200m == 1 || $runSTC700m == 1 || $runSTC700_2000m == 1 || $runSTCbelow2000m == 1 || $runHTCGLO == 1 || $runHTC200m == 1 || $runHTC700m == 1 || $runHTC700_2000m == 1 || $runHTCbelow2000m == 1 || $runSTC == 1 || $runGSL_NAC == 1 || $runMHT == 1 || $runQHF == 1 || $runMedOVF == 1 || $runAABW == 1 ]] && mooTyid=$(retrieve_data $RUNID $FREQ grid-T $TAG_LIST)
          fi
 
          echo "mooTyid : $mooTyid"
@@ -263,8 +263,8 @@ for RUNID in `echo $RUNIDS`; do
             [[ $runBSF_NA == 1 ]]        && run_tool mk_psi_NA    $TAG $RUNID $FREQ $mooVyid:$mooUyid
             [[ $runAMOC == 1 ]]          && run_tool mk_amoc      $TAG $RUNID $FREQ $mooVyid:$mooUyid:$mooTyid
             [[ $runOSNAP == 1 ]]         && run_tool mk_osnap_moc $TAG $RUNID $FREQ $mooVyid:$mooUyid:$mooTyid
-            [[ $runSST_NWCorner == 1 ]]  && run_tool mk_sst_NA    $TAG $RUNID $FREQ $mooTyid
-            [[ $runSSS_LabSea == 1 ]]    && run_tool mk_sss       $TAG $RUNID $FREQ $mooTyid
+            [[ $runSST_NA == 1 ]]  && run_tool mk_sst_NA    $TAG $RUNID $FREQ $mooTyid
+            [[ $runSSS_NA == 1 ]]        && run_tool mk_sss_NA    $TAG $RUNID $FREQ $mooTyid
             [[ $runHTC == 1 ]]           && run_tool mk_htc       $TAG $RUNID $FREQ $mooTyid
             [[ $runSTC == 1 ]]           && run_tool mk_stc       $TAG $RUNID $FREQ $mooTyid
             [[ $runGSL_NAC == 1 ]]       && run_tool mk_gsl_nac   $TAG $RUNID $FREQ $mooTyid
@@ -273,12 +273,12 @@ for RUNID in `echo $RUNIDS`; do
             [[ $runQHF == 1 ]]     && run_tool mk_hfds $TAG $RUNID $FREQ $mooTyid 
             [[ $runMedOVF == 1 ]]   && run_tool mk_medovf $TAG $RUNID $FREQ $mooTyid
             [[ $runAABW == 1 ]] && run_tool mk_aabw $TAG $RUNID $FREQ $mooTyid
-	    [[ $runSpAvg == 1 ]]        && run_tool mk_spatial_avg $TAG $RUNID $FREQ $mooTyid
-            [[ $runSpAvgUpper == 1 ]]        && run_tool mk_spatial_avg_upper $TAG $RUNID $FREQ $mooTyid
-            [[ $runSpAvgLower == 1 ]]        && run_tool mk_spatial_avg_lower $TAG $RUNID $FREQ $mooTyid
+            [[ $runSTCGLO == 1 ]]        && run_tool mk_stc_glo $TAG $RUNID $FREQ $mooTyid    
+            [[ $runSTC200m == 1 ]]        && run_tool mk_stc_glo_200m $TAG $RUNID $FREQ $mooTyid
+            [[ $runSTC700m == 1 ]]        && run_tool mk_stc_glo_700m $TAG $RUNID $FREQ $mooTyid
+            [[ $runSTC700_2000m == 1 ]]   && run_tool mk_stc_glo_700_2000m $TAG $RUNID $FREQ $mooTyid
+            [[ $runSTCbelow2000m == 1 ]]  && run_tool mk_stc_glo_below2000m $TAG $RUNID $FREQ $mooTyid
             [[ $runHTCGLO == 1 ]]        && run_tool mk_htc_glo $TAG $RUNID $FREQ $mooTyid
-            [[ $runHTCLower == 1 ]]        && run_tool mk_htc_glo_lower $TAG $RUNID $FREQ $mooTyid
-            [[ $runHTCUpper == 1 ]]        && run_tool mk_htc_glo_upper $TAG $RUNID $FREQ $mooTyid
             [[ $runHTC200m == 1 ]]        && run_tool mk_htc_glo_200m $TAG $RUNID $FREQ $mooTyid
             [[ $runHTC700m == 1 ]]        && run_tool mk_htc_glo_700m $TAG $RUNID $FREQ $mooTyid
             [[ $runHTC700_2000m == 1 ]]   && run_tool mk_htc_glo_700_2000m $TAG $RUNID $FREQ $mooTyid
@@ -313,7 +313,7 @@ for RUNID in `echo $RUNIDS`; do
          moo_wait
          [[ $runSIE == 1 ]]                                                 && mooT02mid=$(retrieve_data $RUNID 1m grid-T $TAG02_LIST)
          moo_wait
-         [[ $runSIE == 1 || $runMLD_LabSea == 1 ]]                          && mooT03mid=$(retrieve_data $RUNID 1m grid-T $TAG03_LIST)
+         [[ $runSIE == 1 || $runMLD == 1 ]]                          && mooT03mid=$(retrieve_data $RUNID 1m grid-T $TAG03_LIST)
       fi
       
       echo "mooDJFsid : $mooDJFsid"
@@ -333,7 +333,7 @@ for RUNID in `echo $RUNIDS`; do
          [[ $runSIE == 1 ]] && run_tool mk_sie  $TAG $RUNID 1m    $mooT02mid
       done
       for TAG in $TAG03_LIST;do
-         [[ $runMLD_LabSea == 1 ]] && run_tool mk_mxl_NA  $TAG $RUNID 1m    $mooT03mid
+         [[ $runMLD == 1 ]] && run_tool mk_mxl_NA  $TAG $RUNID 1m    $mooT03mid
          [[ $runSIE == 1 ]] && run_tool mk_sie  $TAG $RUNID 1m    $mooT03mid
       done
       let tag2count=0

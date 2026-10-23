@@ -6,9 +6,9 @@
     "N": -24.0,
     "tlon": -43,
     "tlat": -57,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WEDATL_mindepth-1500.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WEDATL_mindepth-1500.nc",
     "mindepth": 1500,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_SOUTHERN_OCEAN_mindepth-1500.nc": {
     "W": -180.0,
@@ -17,9 +17,9 @@
     "N": -24.0,
     "tlon": 0,
     "tlat": -57,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SOUTHERN_OCEAN_mindepth-1500.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SOUTHERN_OCEAN_mindepth-1500.nc",
     "mindepth": 1500,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_AMU_mindepth-390.nc": {
     "W": -109.64,
@@ -28,9 +28,9 @@
     "N": -71.66,
     "tlon": -106,
     "tlat": -74,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_AMU_mindepth-390.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_AMU_mindepth-390.nc",
     "mindepth": 390,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_WROSS_mindepth-390.nc": {
     "W": 157.1,
@@ -39,9 +39,9 @@
     "N": -74.04,
     "tlon": 165,
     "tlat": -77,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WROSS_mindepth-390.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WROSS_mindepth-390.nc",
     "mindepth": 390,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_EROSS_mindepth-390.nc": {
     "W": -176.79,
@@ -50,9 +50,9 @@
     "N": -77.52,
     "tlon": -167,
     "tlat": -78,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_EROSS_mindepth-390.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_EROSS_mindepth-390.nc",
     "mindepth": 390,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_WWED_mindepth-390.nc": {
     "W": -65.13,
@@ -61,9 +61,9 @@
     "N": -72.34,
     "tlon": -59,
     "tlat": -74,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WWED_mindepth-390.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WWED_mindepth-390.nc",
     "mindepth": 390,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_NA_GYRE_minisobath-1000.nc": {
     "W": -60.0,
@@ -72,9 +72,9 @@
     "N": 72.0,
     "tlon": -40,
     "tlat": 50,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NA_GYRE_minisobath-1000.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NA_GYRE_minisobath-1000.nc",
     "minisobath": 1000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_MEDOVF_mindepth-500_maxdepth-2500.nc": {
     "W": -16.0,
@@ -83,10 +83,10 @@
     "N": 39.5,
     "tlon": -11,
     "tlat": 35.5,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_MEDOVF_mindepth-500_maxdepth-2500.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_MEDOVF_mindepth-500_maxdepth-2500.nc",
     "mindepth": 500,
     "maxdepth": 2500,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_LAB_SEA_minisobath-1000.nc": {
     "W": -60.0,
@@ -95,9 +95,20 @@
     "N": 62.0,
     "tlon": -55,
     "tlat": 58.5,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_LAB_SEA_minisobath-1000.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_LAB_SEA_minisobath-1000.nc",
     "minisobath": 1000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_GIN_SEA_minisobath-1000.nc": {
+    "W": -24.0,
+    "E": 10.0,
+    "S": 65.0,
+    "N": 80.0,
+    "tlon": -7,
+    "tlat": 72.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GIN_SEA_minisobath-1000.nc",
+    "minisobath": 1000,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_WG_minisobath-1000.nc": {
     "W": -31.25,
@@ -106,9 +117,9 @@
     "N": -60.4,
     "tlon": 3,
     "tlat": -63.5,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WG_minisobath-1000.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_WG_minisobath-1000.nc",
     "minisobath": 1000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_RG_minisobath-1000.nc": {
     "W": -168.5,
@@ -117,9 +128,9 @@
     "N": -61.6,
     "tlon": -152,
     "tlat": -67,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_RG_minisobath-1000.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_RG_minisobath-1000.nc",
     "minisobath": 1000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_LAB_SEA_maxdepth-1.5.nc": {
     "W": -60.0,
@@ -128,9 +139,20 @@
     "N": 62.0,
     "tlon": -55,
     "tlat": 58.5,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_LAB_SEA_maxdepth-1.5.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_LAB_SEA_maxdepth-1.5.nc",
     "maxdepth": 1.5,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_GIN_SEA_maxdepth-1.5.nc": {
+    "W": -24.0,
+    "E": 10.0,
+    "S": 65.0,
+    "N": 80.0,
+    "tlon": -7,
+    "tlat": 72.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GIN_SEA_maxdepth-1.5.nc",
+    "maxdepth": 1.5,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_NEWFOUND_maxdepth-1.5.nc": {
     "W": -43.0,
@@ -139,9 +161,9 @@
     "N": 50.0,
     "tlon": -40,
     "tlat": 47.5,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NEWFOUND_maxdepth-1.5.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NEWFOUND_maxdepth-1.5.nc",
     "maxdepth": 1.5,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_SO_maxdepth-1.5.nc": {
     "W": -180.0,
@@ -150,9 +172,9 @@
     "N": -45.0,
     "tlon": 0,
     "tlat": -62.5,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SO_maxdepth-1.5.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SO_maxdepth-1.5.nc",
     "maxdepth": 1.5,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_GLO_maxdepth-1.5.nc": {
     "W": -180.0,
@@ -161,9 +183,9 @@
     "N": 90.0,
     "tlon": 0,
     "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-1.5.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-1.5.nc",
     "maxdepth": 1.5,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_GLO.nc": {
     "W": -180.0,
@@ -172,30 +194,28 @@
     "N": 90.0,
     "tlon": 0,
     "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO.nc",
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO.nc",
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
-  "tmask_GLO_mindepth-1000.nc": {
+  "tmask_SO_HEAT.nc": {
     "W": -180.0,
     "E": 180.0,
-    "S": -90.0,
-    "N": 90.0,
+    "S": -89.0,
+    "N": -45.0,
     "tlon": 0,
-    "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_mindepth-1000.nc",
-    "mindepth": 1000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SO_HEAT.nc",
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
-  "tmask_GLO_maxdepth-1000.nc": {
-    "W": -180.0,
-    "E": 180.0,
-    "S": -90.0,
-    "N": 90.0,
+  "tmask_NA_HEAT.nc": {
+    "W": -88.0,
+    "E": 48.0,
+    "S": 30.0,
+    "N": 82.0,
     "tlon": 0,
-    "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-1000.nc",
-    "maxdepth": 1000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NA_HEAT.nc",
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_GLO_maxdepth-200.nc": {
     "W": -180.0,
@@ -204,9 +224,31 @@
     "N": 90.0,
     "tlon": 0,
     "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-200.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-200.nc",
     "maxdepth": 200,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_SO_HEAT_maxdepth-700.nc": {
+    "W": -180.0,
+    "E": 180.0,
+    "S": -89.0,
+    "N": -45.0,
+    "tlon": 0,
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SO_HEAT_maxdepth-700.nc",
+    "maxdepth": 700,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_NA_HEAT_maxdepth-700.nc": {
+    "W": -88.0,
+    "E": 48.0,
+    "S": 30.0,
+    "N": 82.0,
+    "tlon": 0,
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NA_HEAT_maxdepth-700.nc",
+    "maxdepth": 700,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_GLO_maxdepth-700.nc": {
     "W": -180.0,
@@ -215,9 +257,9 @@
     "N": 90.0,
     "tlon": 0,
     "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-700.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_maxdepth-700.nc",
     "maxdepth": 700,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_GLO_mindepth-700_maxdepth-2000.nc": {
     "W": -180.0,
@@ -226,10 +268,34 @@
     "N": 90.0,
     "tlon": 0,
     "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_mindepth-700_maxdepth-2000.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_mindepth-700_maxdepth-2000.nc",
     "mindepth": 700,
     "maxdepth": 2000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_SO_HEAT_mindepth-700_maxdepth-2000.nc": {
+    "W": -180.0,
+    "E": 180.0,
+    "S": -89.0,
+    "N": -45.0,
+    "tlon": 0,
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SO_HEAT_mindepth-700_maxdepth-2000.nc",
+    "mindepth": 700,
+    "maxdepth": 2000,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_NA_HEAT_mindepth-700_maxdepth-2000.nc": {
+    "W": -88.0,
+    "E": 48.0,
+    "S": 30.0,
+    "N": 82.0,
+    "tlon": 0,
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NA_HEAT_mindepth-700_maxdepth-2000.nc",
+    "mindepth": 700,
+    "maxdepth": 2000,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   },
   "tmask_GLO_mindepth-2000.nc": {
     "W": -180.0,
@@ -238,8 +304,30 @@
     "N": 90.0,
     "tlon": 0,
     "tlat": 0,
-    "o": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_mindepth-2000.nc",
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_GLO_mindepth-2000.nc",
     "mindepth": 2000,
-    "m": "/data/scratch/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_SO_HEAT_mindepth-2000.nc": {
+    "W": -180.0,
+    "E": 180.0,
+    "S": -89.0,
+    "N": -45.0,
+    "tlon": 0,
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_SO_HEAT_mindepth-2000.nc",
+    "mindepth": 2000,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
+  },
+  "tmask_NA_HEAT_mindepth-2000.nc": {
+    "W": -88.0,
+    "E": 48.0,
+    "S": 30.0,
+    "N": 82.0,
+    "tlon": 0,
+    "tlat": -62.5,
+    "o": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/tmask_NA_HEAT_mindepth-2000.nc",
+    "mindepth": 2000,
+    "m": "/data/users/catherine.guiavarch/MARINE_VAL/u-dv341/mesh.nc"
   }
 }
