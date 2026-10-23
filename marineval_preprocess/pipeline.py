@@ -115,42 +115,65 @@ def rename(ds_path,kind,old,new):
     if has_old: run(['ncrename','-O','-'+kind,old+','+new,ds_path])
     elif not has_new: raise RuntimeError(f'Neither {old} nor {new} exists in {ds_path}')
 
-def correct_time(path,c):
-    if c['time_mode']=='none': return
-    import netCDF4, cftime, numpy as np
-    with netCDF4.Dataset(path,'r+') as ds:
-        names=[n for n in ('time_counter','time_centered') if n in ds.variables]
-        if not names: raise RuntimeError('No recognised time coordinates: '+str(path))
-        converted={}
+def correct_time(path, c=None):
+    import re
+    from pathlib import Path
+    import netCDF4
+    import cftime
+
+    match = re.search(
+        r"_(\d{8})-(\d{8})_", Path(path).name
+    )
+    if not match:
+        raise ValueError(f"No date range found in filename: {path}")
+
+    units = "seconds since 1850-01-01 00:00:00"
+
+    with netCDF4.Dataset(path, "r+") as ds:
+        names = [
+            name for name in ("time_counter", "time_centered")
+            if name in ds.variables
+        ]
+        if not names:
+            raise ValueError(f"No recognised time variable: {path}")
+
         for name in names:
-            v=ds[name]; units=getattr(v,'units',''); cal=getattr(v,'calendar','standard')
-            if units!=c['expected_time_units']:
-                raise RuntimeError(f'{name}: units {units!r} != configured expected units {c["expected_time_units"]!r}')
-            targets=[name]
-            b=getattr(v,'bounds',None)
-            if b:
-                if b not in ds.variables: raise RuntimeError('Missing bounds variable '+b)
-                targets.append(b)
-            # Also cover conventional bounds variables without a bounds attribute.
-            if name+'_bounds' in ds.variables: targets.append(name+'_bounds')
-            for n in dict.fromkeys(targets):
-                spec=(units,cal)
-                if n in converted:
-                    if converted[n]!=spec: raise RuntimeError('Conflicting bounds metadata: '+n)
-                    continue
-                a=ds[n]
-                au=getattr(a,'units',units); ac=getattr(a,'calendar',cal)
-                if au!=units or ac!=cal: raise RuntimeError('Conflicting time metadata: '+n)
-                values=a[:]
-                if np.ma.isMaskedArray(values) and np.any(np.ma.getmaskarray(values)):
-                    raise RuntimeError('Masked time values: '+n)
-                dates=cftime.num2date(values,units,calendar=cal,only_use_cftime_datetimes=True)
-                new=np.asarray(cftime.date2num(dates,c['target_time_units'],calendar=cal))
-                if np.issubdtype(a.dtype,np.integer) and not np.allclose(new,np.rint(new),rtol=0,atol=1e-6):
-                    raise RuntimeError('Non-integral rebased times for integer variable '+n)
-                a[:]=new; a.units=c['target_time_units']
-                a.time_origin=c['target_time_units'].split('since ',1)[1]
-                converted[n]=spec
+            var = ds.variables[name]
+            if var.size != 1:
+                raise ValueError(
+                    f"{name}: expected one time record, found {var.size}"
+                )
+
+            calendar = getattr(var, "calendar", "standard")
+
+            def to_seconds(tag):
+                date = cftime.datetime(
+                    int(tag[:4]),
+                    int(tag[4:6]),
+                    int(tag[6:8]),
+                    calendar=calendar,
+                )
+                return float(
+                    cftime.date2num(date, units, calendar=calendar)
+                )
+
+            start = to_seconds(match.group(1))
+            end = to_seconds(match.group(2))
+
+            if end <= start:
+                raise ValueError(f"Invalid filename date range: {path}")
+
+            midpoint = (start + end) / 2
+
+            # Avoid silently truncating fractional seconds.
+            if var.dtype.kind in "iu" and not midpoint.is_integer():
+                raise ValueError(
+                    f"{name}: integer variable cannot store {midpoint}"
+                )
+
+            var[...] = midpoint
+            var.units = units
+            var.time_origin = "1850-01-01 00:00:00"
 
 def transform(path,c):
     import netCDF4
