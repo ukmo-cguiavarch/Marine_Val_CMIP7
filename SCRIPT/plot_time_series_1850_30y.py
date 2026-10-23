@@ -68,7 +68,21 @@ class run(object):
         
                 # build series
                 cnam=get_varname(cf,cvar)
-                df[kf] = pd.Series(ncid.variables[cnam][:].squeeze()*self.sf, index = timeidx, name = self.name)
+                ncvar = ncid.variables[cnam]
+                ignore_invalid_valid_max = (
+                    cnam == 'NExnsidc'
+                    and 'valid_max' in ncvar.ncattrs()
+                    and ncvar.valid_max == 0
+                )
+                if ignore_invalid_valid_max:
+                    # cdficediags writes an invalid valid_max=0 for sea-ice extent.
+                    ncvar.set_auto_mask(False)
+                values = ncvar[:]
+                if ignore_invalid_valid_max:
+                    for attr in ('_FillValue', 'missing_value'):
+                        if attr in ncvar.ncattrs():
+                            values = np.ma.masked_equal(values, getattr(ncvar, attr))
+                df[kf] = pd.Series(values.squeeze()*self.sf, index = timeidx, name = self.name)
 
             except Exception as e: 
                 print ('issue in trying to load file : '+cf)
